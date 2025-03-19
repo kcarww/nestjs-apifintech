@@ -6,7 +6,6 @@ import { ConfigModule } from '@nestjs/config';
 import { SequelizeModule } from '@nestjs/sequelize';
 import { Transaction } from './transactions/entities/transaction.entity';
 
-console.log(process.env.DB_CONNECTION , '<<<<<<<<<<<<')
 @Module({
   imports: [
     ConfigModule.forRoot(),
