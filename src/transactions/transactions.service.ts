@@ -11,11 +11,11 @@ export class TransactionsService {
 
   }
   create(createTransactionDto: CreateTransactionDto) {
-    return this.transactionModel.create(createTransactionDto);
+    return this.transactionModel.create({ ...createTransactionDto});
   }
 
   findAll() {
-    return `This action returns all transactions`;
+    return this.transactionModel.findAll()
   }
 
 }
