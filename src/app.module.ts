@@ -10,6 +10,7 @@ import { Account } from './accounts/entities/account.entity';
 import { CommonModule } from './common/common.module';
 import { AuthModule } from './auth/auth.module';
 import { TenantModule } from './tenant/tenant.module';
+import { ReportsModule } from './reports/reports.module';
 import * as dotenv from 'dotenv';
 dotenv.config();
 
@@ -37,7 +38,8 @@ dotenv.config();
     AccountsModule,
     CommonModule,
     AuthModule,
-    TenantModule
+    TenantModule,
+    ReportsModule
   ],
   controllers: [AppController],
   providers: [AppService],
