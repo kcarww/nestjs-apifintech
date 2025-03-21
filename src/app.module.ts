@@ -8,10 +8,16 @@ import { Transaction } from './transactions/entities/transaction.entity';
 import { AccountsModule } from './accounts/accounts.module';
 import { Account } from './accounts/entities/account.entity';
 import { CommonModule } from './common/common.module';
+import { AuthModule } from './auth/auth.module';
+import * as dotenv from 'dotenv';
+dotenv.config();
+
 
 @Module({
   imports: [
-    ConfigModule.forRoot(),
+    ConfigModule.forRoot({
+      isGlobal: true,
+    }),
     SequelizeModule.forRoot({
       dialect: process.env.DB_CONNECTION as any,
       host: process.env.DB_HOST,
@@ -24,12 +30,12 @@ import { CommonModule } from './common/common.module';
       synchronize: true,
       sync: {
         alter: true,
-        force: true,
       },
     }),
     TransactionsModule,
     AccountsModule,
-    CommonModule
+    CommonModule,
+    AuthModule
   ],
   controllers: [AppController],
   providers: [AppService],
