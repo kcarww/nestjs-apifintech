@@ -9,6 +9,7 @@ import { AccountsModule } from './accounts/accounts.module';
 import { Account } from './accounts/entities/account.entity';
 import { CommonModule } from './common/common.module';
 import { AuthModule } from './auth/auth.module';
+import { TenantModule } from './tenant/tenant.module';
 import * as dotenv from 'dotenv';
 dotenv.config();
 
@@ -35,7 +36,8 @@ dotenv.config();
     TransactionsModule,
     AccountsModule,
     CommonModule,
-    AuthModule
+    AuthModule,
+    TenantModule
   ],
   controllers: [AppController],
   providers: [AppService],
